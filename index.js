@@ -91,7 +91,7 @@ function middlewares(config, stuff, app, auth, storage) {
     res.redirect('https://' + gitHostname + '/login/oauth/authorize?client_id=' + clientId + '&scope=read:org')
   });
 
-  app.use('/oauth/callback', function(req, res, next) {
+  app.use('/-/oauth/callback', function(req, res, next) {
     var code = req.query.code;
 
     var data = JSON.stringify({
